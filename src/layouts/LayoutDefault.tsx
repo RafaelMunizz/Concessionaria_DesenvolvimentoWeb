@@ -9,7 +9,7 @@ interface LayoutDefaultProps {
 export function LayoutDefault({children}: LayoutDefaultProps) {
   return (
     <LayoutContainer>
-      <Header></Header>
+      <Header />
       <MainDiv>{children}</MainDiv>
     </LayoutContainer>
   )
