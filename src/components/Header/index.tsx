@@ -10,10 +10,10 @@ export function Header() {
         <ImgCarros src="https://dicas.olx.com.br/wp-content/uploads/2021/04/tipos-de-carros-capa.png" alt="" />
       </DivImgCarros>
       <DivMenuSelection>
-        <ButtonsMenuSelection>HOME</ButtonsMenuSelection>
-        <ButtonsMenuSelection>ANÚNCIOS</ButtonsMenuSelection>
-        <ButtonsMenuSelection>QUEM SOMOS</ButtonsMenuSelection>
-        <ButtonsMenuSelection>CONTATE-NOS</ButtonsMenuSelection>
+      <ButtonsMenuSelection to={"/home"} >HOME</ButtonsMenuSelection>
+      <ButtonsMenuSelection to={"/posts"} >ANÚNCIOS</ButtonsMenuSelection>
+      <ButtonsMenuSelection to={"/who"} >QUEM SOMOS</ButtonsMenuSelection>
+      <ButtonsMenuSelection to={"/contact"} >CONTATE-NOS</ButtonsMenuSelection>
       </DivMenuSelection>
     </DivContainer>
   )
