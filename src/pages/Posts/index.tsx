@@ -1,4 +1,4 @@
-import { DivCardPost, DivSearch } from "./styles";
+import { AdressCardPost, AdvertiserCardPost, ButtonSearch, DivCardPost, DivPosts, DivSearch, ImageCardPost, InputSearch, PriceCardPost, TitleCarCardPost } from "./styles";
 import { posts } from "../../config/posts";
 
 // { id, anunciante, carro, endereco, valor, fotos}
@@ -7,24 +7,24 @@ export function Posts() {
   return (
     <div>
       <DivSearch>
-        <label>Busca </label>
+        <label>Buscar</label>
 
-        <input type="text" />
-        <button>Ir</button>
+        <InputSearch type="text" />
+        <ButtonSearch>Ir</ButtonSearch>
       </DivSearch>
-      {posts.map(({ id, anunciante, carro, endereco, valor, fotos}) => (
-        <DivCardPost key={id}>
+      <DivPosts>
 
-          <h3>anunciante: {anunciante}</h3>
-          <h3>carro: {carro}</h3>
-          <h3>endereco: {endereco}</h3>
-          <h3>valor: {valor}</h3>
-          <img src={fotos[0]} alt="" />
-       
-          <br />
-          <br />
-        </DivCardPost>
-      ))}
+        {posts.map(({ id, anunciante, carro, endereco, valor, fotos}) => (
+          <DivCardPost key={id}>
+
+            <ImageCardPost src={fotos[0]} alt="" />
+            <PriceCardPost>R$ {valor}</PriceCardPost>
+            <TitleCarCardPost>{carro}</TitleCarCardPost>
+            <AdvertiserCardPost>{anunciante}</AdvertiserCardPost>
+            <AdressCardPost>{endereco}</AdressCardPost>
+          </DivCardPost>
+        ))}
+      </DivPosts>
     </div>
   )
 }
