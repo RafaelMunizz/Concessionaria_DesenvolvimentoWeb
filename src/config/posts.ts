@@ -27,9 +27,7 @@ export const posts: Posts[] = [
     endereco: 'Avenida Principal, 1234',
     valor: 80000,
     fotos: [
-      'https://cdn.motor1.com/images/mgl/NPOzO/s1/2021-vw-golf-gti.webp',
-      'https://motorshow.com.br/wp-content/uploads/2019/08/Volkswagen-Golf-GTI-Special-Performance-2020.jpg',
-      'https://quatrorodas.abril.com.br/wp-content/uploads/2018/05/volkswagen-golf-gti-6.jpg'
+      'https://img.olx.com.br/images/57/575331336294668.jpg',
     ]
   },
   {
@@ -39,9 +37,7 @@ export const posts: Posts[] = [
     endereco: 'Rua dos Sonhos, 567',
     valor: 60000,
     fotos: [
-      'https://cdn.motor1.com/images/mgl/zL2p1/s1/2022-honda-civic-type-r-rendering.webp',
-      'https://cdn.motor1.com/images/mgl/RvY8V/s1/2020-honda-civic-type-r-facelift-spy-photo.webp',
-      'https://img.olx.com.br/images/26/268252076118650.jpg'
+      'https://www.autoo.com.br/fotos/2019/11/1280_960/honda_civic_2020_1_23112019_18464_1280_960.jpg',
     ]
   },
   {
@@ -51,9 +47,7 @@ export const posts: Posts[] = [
     endereco: 'Avenida dos Esportes, 987',
     valor: 120000,
     fotos: [
-      'https://cdn.motor1.com/images/mgl/RvY8V/s1/2020-honda-civic-type-r-facelift-spy-photo.webp',
-      'https://www.automotiveaddicts.com/wp-content/uploads/2019/03/2019_Ford_Mustang_GT_PP2_Review-35.jpg',
-      'https://cdn.motor1.com/images/mgl/4gEVv/s1/2021-ford-mustang-mach-1-spied.webp'
+      'https://i.pinimg.com/originals/8b/7b/6c/8b7b6c3ea377a6c2e9e08bd4d6f140ea.jpg',
     ]
   },
   // Adicione mais itens conforme necessário
