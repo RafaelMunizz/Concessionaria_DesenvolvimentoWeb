@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import {styled} from 'styled-components'
 
 export const DivMainLogin = styled.div`
@@ -36,4 +37,12 @@ export const ButtonLogin = styled.button`
   color: ${props => props.theme.white};
   padding: 0.4rem;
   margin-top: 1rem;
+  cursor: pointer;
+  /* 
+  // Quando for NavLink
+  display: flex;
+  justify-content: center; 
+  text-decoration: none;
+  align-items: center;
+  */
 `
