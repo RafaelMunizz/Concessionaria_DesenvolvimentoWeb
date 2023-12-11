@@ -1,13 +1,43 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const DivContainer = styled.div`
-  grid-area: header;
+
+export const NavLinkIconLogout = styled(NavLink)`
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+
+  color: ${props => props.theme.black};
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+  }
+  
+`
+
+export const NavLinkIconUser = styled(NavLink)`
+  position: absolute;
+  top: 0.8rem;
+  right: 4.2rem;
+
+  color: ${props => props.theme.black};
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+  }
+  
 `
 
 export const DivTitle = styled.div`
   display: flex;
   justify-content: center;
+  position: relative;
+`
+
+export const DivContainer = styled.div`
+  grid-area: header;
 `
 
 export const DivImgCarros = styled.div`
