@@ -1,9 +1,8 @@
-import { ImageTeam } from './styles';
+import { DivContainerWho, ImageTeam } from './styles';
 
 export function Who() {
   return (
-    <div>
-      <br />
+    <DivContainerWho>
           <h2>Quem Somos</h2>
           <p>
             Bem-vindo à nossa concessionária de carros! Somos uma equipe apaixonada por automóveis e comprometida em fornecer as melhores opções de veículos para nossos clientes.
@@ -17,7 +16,7 @@ export function Who() {
             Conheça nossa equipe dedicada de profissionais que está aqui para ajudar você a encontrar o carro perfeito.
           </p>
           <ImageTeam src="src\assets\images\Equipe3.jpg" alt="Equipe"  />
-    </div>
+    </DivContainerWho>
         
   );
 }
