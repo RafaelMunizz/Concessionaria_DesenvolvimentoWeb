@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DivSearch = styled.div`
+export const FormSearch = styled.form`
   display: flex;
   width: 100%;
   align-items: center;
@@ -60,7 +60,7 @@ export const DivPosts = styled.div`
   justify-content: center;
   align-items: center;
 
-  grid-template-rows: 54%;
+  row-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 0px 30px;
 `
