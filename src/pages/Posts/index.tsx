@@ -1,6 +1,7 @@
-import { AdressCardPost, AdvertiserCardPost, ButtonSearch, DivCardPost, DivPosts, FormSearch, ImageCardPost, InputSearch, PriceCardPost, TitleCarCardPost } from "./styles";
+import { AdressCardPost, AdvertiserCardPost, ButtonSearch, DivCardPost, DivPosts, FormSearch, ImageCardPost, InputSearch, NavCardPost, PriceCardPost, TitleCarCardPost } from "./styles";
 import { posts } from "../../config/posts";
 import { FormEvent, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 // { id, anunciante, carro, endereco, valor, fotos}
 interface Posts {
@@ -31,22 +32,23 @@ export function Posts() {
   return (
     <div>
       <FormSearch onSubmit={handleSearchCars}>
-        <label>Buscar</label>
 
-        <InputSearch type="text" value={carToSearch} onChange={(e) => {setCarToSearch(e.target.value)}}/>
-        <ButtonSearch type="submit" >Ir</ButtonSearch>
+        <InputSearch type="text" value={carToSearch} placeholder="   Digite o carro ou valor" onChange={(e) => {setCarToSearch(e.target.value)}}/>
+        <ButtonSearch type="submit" >Buscar</ButtonSearch>
       </FormSearch>
       <DivPosts>
 
         {postsCars.map(({ id, anunciante, carro, endereco, valor, fotos}) => (
-          <DivCardPost key={id}>
+            <NavCardPost to={`/posts/${id}`}>
+              <DivCardPost key={id}>
 
-            <ImageCardPost src={fotos[0]} alt="" />
-            <PriceCardPost>R$ {valor}</PriceCardPost>
-            <TitleCarCardPost>{carro}</TitleCarCardPost>
-            <AdvertiserCardPost>{anunciante}</AdvertiserCardPost>
-            <AdressCardPost>{endereco}</AdressCardPost>
-          </DivCardPost>
+                <ImageCardPost src={fotos[0]} alt="" />
+                <PriceCardPost>R$ {valor}</PriceCardPost>
+                <TitleCarCardPost>{carro}</TitleCarCardPost>
+                <AdvertiserCardPost>{anunciante}</AdvertiserCardPost>
+                <AdressCardPost>{endereco}</AdressCardPost>
+              </DivCardPost>
+            </NavCardPost>
         ))}
       </DivPosts>
     </div>

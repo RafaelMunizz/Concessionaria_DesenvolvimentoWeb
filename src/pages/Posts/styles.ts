@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const FormSearch = styled.form`
@@ -54,6 +55,12 @@ export const AdressCardPost = styled.h3`
   font-size: 1.2rem;
 `
 
+export const NavCardPost = styled(NavLink)`
+  text-decoration: none;
+  color: ${props => props.theme.black};
+  width: 20rem;
+`
+
 export const DivPosts = styled.div`
   display: grid;
 
@@ -66,12 +73,20 @@ export const DivPosts = styled.div`
 `
 
 export const ButtonSearch = styled.button`
-  width: 2.1rem;
   border: 1px solid ${props => props.theme['gray-border']};
-  border-radius: 0.3rem;
+  background-color: ${props => props.theme["blue-buttons"]};
+  color: ${props => props.theme.white};
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
 `
 
 export const InputSearch = styled.input`
   border: 1px solid ${props => props.theme['gray-border']};
-  border-radius: 0.3rem;
+  border-radius: 8px;
+  padding: 0.5rem;
 `
