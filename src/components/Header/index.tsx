@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-import { ButtonsMenuSelection, DivContainer, DivImgCarros, DivMenuSelection, DivTitle, IconUser, ImgCarros, NavLinkIconLogout, NavLinkIconUser } from "./styles";
+import { ButtonsMenuSelection, DivContainer, DivImgCarros, DivMenuSelection, DivTitle, ImgCarros, NavLinkIconLogout, NavLinkIconUser } from "./styles";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
 
@@ -7,7 +6,7 @@ export function Header() {
   return (
     <DivContainer>
       <DivTitle>
-        <h1>Concessionária </h1>
+        <h1>Auto Ofertas Online</h1>
         <NavLinkIconUser to="/user">
           <AccountCircleIcon />
         </NavLinkIconUser>

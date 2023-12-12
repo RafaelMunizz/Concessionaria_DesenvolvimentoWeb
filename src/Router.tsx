@@ -7,6 +7,7 @@ import { RouteLayout } from './components/RouteLayout'
 import { LayoutDefault } from './layouts/LayoutDefault'
 import { Contact } from './pages/Contact'
 import { UserPage } from './pages/UserPage'
+import { Details } from './pages/Details'
 
 export function Router() {
   return (
@@ -19,6 +20,7 @@ export function Router() {
       <Route path="/who" element={<RouteLayout withLayout={true} page={<Who />} />} />
       <Route path="/contact" element={<RouteLayout withLayout={true} page={<Contact />} />} />
       <Route path="/user" element={<RouteLayout withLayout={true} page={<UserPage />} />} />
+      <Route path="/posts/:id" element={<RouteLayout withLayout={true} page={<Details />} />} />
     </Routes>
   )
 }

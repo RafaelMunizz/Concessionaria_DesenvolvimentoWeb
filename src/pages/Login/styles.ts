@@ -25,14 +25,14 @@ export const LabelFormLogin = styled.label`
 
 export const InputFormLogin = styled.input`
   border: 1px solid ${(props) => props.theme['gray-border']};
-  border-radius: 0.7rem;
+  border-radius: 8px;
   margin: 0.5rem 0;
   padding: 0.4rem;
 `
 
 export const ButtonLogin = styled.button`
-  border: 0.2px solid black;
-  border-radius: 3rem;
+  border: 1px solid transparent;
+  border-radius: 8px;
   background-color: #3636ff;
   color: ${props => props.theme.white};
   padding: 0.4rem;
@@ -45,4 +45,9 @@ export const ButtonLogin = styled.button`
   text-decoration: none;
   align-items: center;
   */
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
 `

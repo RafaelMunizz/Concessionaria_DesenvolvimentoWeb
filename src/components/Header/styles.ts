@@ -50,6 +50,7 @@ export const ImgCarros = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 0.6rem;
 `
 
 export const DivMenuSelection = styled.div`
@@ -64,7 +65,7 @@ export const ButtonsMenuSelection = styled(NavLink)`
   background-color: ${props => props.theme['blue-buttons']};
   color: ${props => props.theme.white};
   border: 0.1rem solid;
-  border-radius: 0.6rem;
+  border-radius: 8px;
   text-decoration: none;
   cursor: pointer;
 
@@ -72,12 +73,9 @@ export const ButtonsMenuSelection = styled(NavLink)`
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  
-  :after {
-    background-color: '#6c6cff'
-  }
 
-  :hover {
-    background-color: ${props => props.theme.black};
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.2s;
   }
 `

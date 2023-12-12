@@ -5,7 +5,7 @@ export function Who() {
     <DivContainerWho>
           <h2>Quem Somos</h2>
           <p>
-            Bem-vindo à nossa concessionária de carros! Somos uma equipe apaixonada por automóveis e comprometida em fornecer as melhores opções de veículos para nossos clientes.
+            Bem-vindo à nossa concessionária e marketplace de carros! Somos uma equipe apaixonada por automóveis e comprometida em fornecer as melhores opções de veículos para nossos clientes.
           </p>
           <p>
             Nossa missão é proporcionar uma experiência excepcional de compra de carros, garantindo a satisfação e confiança de nossos clientes.
