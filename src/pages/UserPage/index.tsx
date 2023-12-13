@@ -16,12 +16,12 @@ export function UserPage() {
 
   const navigate = useNavigate();
 
-  const {userId} = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
 
   useEffect(() => {
     const getAnunciante = async () => {
       try {
-        const result = await api.get(`/anunciantes/${userId}`)
+        const result = await api.get(`/anunciantes/${user?.id}`)
         setAnunciante(result.data)
       } catch (error) {
         console.log(error.message)
@@ -39,7 +39,7 @@ export function UserPage() {
       ano: year,
       preco: price,
       foto: foto,
-      id_anunciante: userId
+      id_anunciante: user?.id
     })
 
     const sendData = async () => {
@@ -50,8 +50,10 @@ export function UserPage() {
           ano: year,
           preco: price,
           foto: foto,
-          id_anunciante: userId
+          id_anunciante: user?.id
         })
+
+        alert("Anúncio criado com sucesso!")
         
       } catch (error) {
         console.log(error.message)
