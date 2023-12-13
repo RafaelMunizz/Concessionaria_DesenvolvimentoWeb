@@ -26,6 +26,7 @@ export const InputFormContact = styled.input`
   border-radius: 0.7rem;
   margin: 0.5rem 0;
   padding: 0.4rem;
+  width: 25rem;
 
 `
 
@@ -36,4 +37,6 @@ export const ButtonContact = styled.button`
   color: ${props => props.theme.white};
   padding: 0.4rem;
   margin-top: 1rem;
+  width: 25rem;
+
 `
