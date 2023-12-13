@@ -1,9 +1,13 @@
 import { ReactNode, createContext, useState } from 'react'
 
+interface User {
+  id: number
+  funcao: number
+}
 interface AuthContextType {
-  userId: number | null
+  user: User | null
   isUserLoggedIn: boolean
-  changeUserId: (id: number) => void
+  changeUser: (user: User) => void
 }
 
 interface AuthContextProviderProps {
@@ -13,16 +17,16 @@ interface AuthContextProviderProps {
 export const AuthContext = createContext({} as AuthContextType)
 
 export function AuthContextProvider({ children }: AuthContextProviderProps) {
-  const [userId, setUserId] = useState<number | null>(null)
+  const [user, setUser] = useState<User | null>(null)
 
-  const isUserLoggedIn = userId ? true : false
+  const isUserLoggedIn = user ? true : false
 
-  function changeUserId(id: number) {
-    setUserId(id)
+  function changeUser(user: User) {
+    setUser(user)
   }
 
   return (
-    <AuthContext.Provider value={{ userId, isUserLoggedIn, changeUserId }}>
+    <AuthContext.Provider value={{ user, isUserLoggedIn, changeUser }}>
       {children}
     </AuthContext.Provider>
   )
