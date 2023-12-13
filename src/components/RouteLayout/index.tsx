@@ -12,11 +12,11 @@ export function RouteLayout({ page, withLayout }: RouteLayoutProps) {
   const { isUserLoggedIn } = useContext(AuthContext)
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (withLayout && !isUserLoggedIn) {
-  //     navigate("/login")
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (withLayout && !isUserLoggedIn) {
+      navigate("/login")
+    }
+  }, [])
 
   if (withLayout) {
     return (
