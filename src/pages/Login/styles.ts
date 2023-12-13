@@ -51,3 +51,13 @@ export const ButtonLogin = styled.button`
     transition: opacity 0.2s;
   }
 `
+
+export const DivSingup = styled.div`
+  display: flex;
+  padding: 1rem;
+  font-size: 1.3rem;
+
+  a {
+    text-decoration: none;
+  }
+`

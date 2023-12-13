@@ -1,14 +1,18 @@
-import { FormEvent, useState } from "react";
-import { ButtonLogin, DivMainLogin, FormLogin, InputFormLogin, LabelFormLogin } from "./styles";
-import { useNavigate } from 'react-router-dom'
+import { FormEvent, useState, useContext } from "react";
+import { ButtonLogin, DivMainLogin, DivSingup, FormLogin, InputFormLogin, LabelFormLogin, NavSingup } from "./styles";
+import { NavLink, useNavigate } from 'react-router-dom'
+import { AuthContext } from "../../context/AuthContext"
+import { api } from '../../api/api'
 
 export function Login(){
-
   const [user, setUser] = useState('')
   const [password, setPassword] = useState('')
+  
   const navigate = useNavigate();
 
-  function handleSubmit(e: FormEvent) {
+  const { changeUserId } = useContext(AuthContext)
+
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
 
     console.log({
@@ -16,19 +20,18 @@ export function Login(){
       password
     })
 
-    // Fazer verificação do user
-    if(user == "rafa@gmail.com") {
-
-      //setInterval(() => {navigate("/home")}, 1000)
+    try {
+      const response = await api.post('/anunciantes/autenticar', { email: user, senha: password })
+      changeUserId(response.data)
+      navigate("/home")
+    } catch {
+      alert("Usuário/Senha incorretos")
     }
-
-    navigate("/home")
-
   }
 
   return( 
     <DivMainLogin>
-      <h1>Concessionária </h1>
+      <h1>Auto Ofertas Online </h1>
       <FormLogin onSubmit={handleSubmit}>
         <LabelFormLogin>Usuário</LabelFormLogin>
         <InputFormLogin type="email" value={user} onChange={(e) => {setUser(e.target.value)}} required/>
@@ -36,6 +39,9 @@ export function Login(){
         <InputFormLogin type="password" value={password} onChange={(e) => {setPassword(e.target.value)}} required/>
         <ButtonLogin type="submit">Enviar</ButtonLogin>
       </FormLogin>
+      <DivSingup>
+        <NavLink to={'/singup'}>Cadastre-se</NavLink>
+      </DivSingup>
     </DivMainLogin>
   )
 }
