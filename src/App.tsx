@@ -3,14 +3,16 @@ import { GlobalStyle } from './styles/Globals'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './Router'
 import { defaultTheme } from './styles/themes/default'
-import { LayoutDefault } from './layouts/LayoutDefault'
+import { AuthContextProvider } from './context/AuthContext'
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle/>
         <BrowserRouter>
-          <Router />
+          <AuthContextProvider>
+            <Router />
+          </AuthContextProvider>
         </BrowserRouter>
     </ThemeProvider>
   )

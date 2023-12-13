@@ -1,0 +1,65 @@
+{
+  "hash": "e775e2c0",
+  "browserHash": "6e323403",
+  "optimized": {
+    "@mui/icons-material/AccountCircle": {
+      "src": "../../node_modules/@mui/icons-material/AccountCircle.js",
+      "file": "@mui_icons-material_AccountCircle.js",
+      "fileHash": "5be5d933",
+      "needsInterop": true
+    },
+    "@mui/icons-material/Logout": {
+      "src": "../../node_modules/@mui/icons-material/Logout.js",
+      "file": "@mui_icons-material_Logout.js",
+      "fileHash": "dddcebb2",
+      "needsInterop": true
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "ebcac503",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "6d32c479",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "f381498e",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "3a1e1358",
+      "needsInterop": false
+    },
+    "styled-components": {
+      "src": "../../node_modules/styled-components/dist/styled-components.browser.esm.js",
+      "file": "styled-components.js",
+      "fileHash": "51d0a600",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-S6OVFZSW": {
+      "file": "chunk-S6OVFZSW.js"
+    },
+    "chunk-FBRNPY62": {
+      "file": "chunk-FBRNPY62.js"
+    },
+    "chunk-PYM5DCDC": {
+      "file": "chunk-PYM5DCDC.js"
+    },
+    "chunk-UM3JHGVO": {
+      "file": "chunk-UM3JHGVO.js"
+    },
+    "chunk-CEQRFMJQ": {
+      "file": "chunk-CEQRFMJQ.js"
+    }
+  }
+}

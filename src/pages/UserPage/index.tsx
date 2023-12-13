@@ -1,6 +1,9 @@
-import { useState, FormEvent } from "react";
+import { useState, FormEvent, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ButtonRegisterVehicle, DivContainerUserPage, DivUserData, FormRegisterVehicle, InputRegisterVehicle, LabelRegisterVehicle } from "./styles";
+import { AuthContext } from "../../context/AuthContext";
+import { api } from "../../api/api";
+import { Anunciante } from "../Posts";
 
 export function UserPage() {
 
@@ -8,19 +11,53 @@ export function UserPage() {
   const [model, setModel] = useState('')
   const [year, setYear] = useState('')
   const [price, setPrice] = useState('')
+  const [foto, setFoto] = useState('')
+  const [anunciante, setAnunciante] = useState<Anunciante>({} as Anunciante)
+
   const navigate = useNavigate();
+
+  const {userId} = useContext(AuthContext)
+
+  useEffect(() => {
+    const getAnunciante = async () => {
+      try {
+        const result = await api.get(`/anunciantes/${userId}`)
+        setAnunciante(result.data)
+      } catch (error) {
+        console.log(error.message)
+      }
+    }
+    getAnunciante()
+  },[])
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
 
     console.log({
-      brand,
-      model,
-      year,
-      price,
+      marca: brand,
+      modelo: model,
+      ano: year,
+      preco: price,
+      foto: foto,
+      id_anunciante: userId
     })
 
-    //navigate("/home")
+    const sendData = async () => {
+      try {
+        await api.post('/carros', {
+          marca: brand,
+          modelo: model,
+          ano: year,
+          preco: price,
+          foto: foto,
+          id_anunciante: userId
+        })
+        
+      } catch (error) {
+        console.log(error.message)
+      }
+    }
+    sendData()
 
   }
   
@@ -28,12 +65,11 @@ export function UserPage() {
     <DivContainerUserPage>
       <h2>Dados do usuário:</h2>
       <DivUserData>
-        <h3>Nome de usuário: {"{name}"}</h3>
-        <h3>Email: {"{email}"}</h3>
-        <h3>CPF: {"{cpf}"}</h3>
-        <h3>Telefone: {"{telephone}"}</h3>
-        <h3>Endereço: {"{adress}"}</h3>
-        <h3>Tipo do usuário: {"{type}"}</h3>
+        <h3>Nome de usuário: {anunciante.nome}</h3>
+        <h3>Email: {anunciante.email}</h3>
+        <h3>CPF: {anunciante.cpf}</h3>
+        <h3>Telefone: {anunciante.telefone}</h3>
+        <h3>Endereço: {anunciante.numero}, {anunciante.rua}, {anunciante.bairro}</h3>
       </DivUserData>
       <h2>Cadastrar novo anúncio:</h2>
       <FormRegisterVehicle onSubmit={handleSubmit}>
@@ -45,6 +81,8 @@ export function UserPage() {
         <InputRegisterVehicle type="number" value={year} onChange={(e) => {setYear(e.target.value)}} required/>
         <LabelRegisterVehicle>Preço</LabelRegisterVehicle>
         <InputRegisterVehicle type="number" value={price} onChange={(e) => {setPrice(e.target.value)}} required/>
+        <LabelRegisterVehicle>Foto</LabelRegisterVehicle>
+        <InputRegisterVehicle type="text" value={foto} onChange={(e) => {setFoto(e.target.value)}} required/>
         <ButtonRegisterVehicle type="submit">Enviar</ButtonRegisterVehicle>
       </FormRegisterVehicle>
     </DivContainerUserPage>
