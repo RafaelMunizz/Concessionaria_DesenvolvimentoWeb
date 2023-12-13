@@ -10,7 +10,7 @@ export function Login(){
   
   const navigate = useNavigate();
 
-  const { changeUserId } = useContext(AuthContext)
+  const { changeUser } = useContext(AuthContext)
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -22,7 +22,7 @@ export function Login(){
 
     try {
       const response = await api.post('/anunciantes/autenticar', { email: user, senha: password })
-      changeUserId(response.data)
+      changeUser(response.data)
       navigate("/home")
     } catch {
       alert("Usuário/Senha incorretos")
@@ -45,5 +45,3 @@ export function Login(){
     </DivMainLogin>
   )
 }
-
-// target.innerHTML
