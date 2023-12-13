@@ -3,6 +3,7 @@ import { ButtonSingup, DivMainSingup, FormSingup, InputFormSingup, LabelFormSing
 import { NavLink, useNavigate } from 'react-router-dom'
 import { DivSingup } from "../Login/styles";
 import { Select, MenuItem } from '@mui/material'
+import { api } from "../../api/api";
 
 interface Anunciante {
   nome: string
@@ -80,16 +81,35 @@ export function Singup(){
     if (erros.length > 0) {
       alert("Por favor, corrija os seguintes erros:\n" + erros.join("\n"));
     } else {
-      console.log({
-        email,
-        senha,
-        nome,
-        cpf,
-        telefone,
-        rua,
-        numero,
-        bairro,
-      });
+      // console.log({
+      //   email,
+      //   senha,
+      //   nome,
+      //   cpf,
+      //   telefone,
+      //   rua,
+      //   numero,
+      //   bairro,
+      // });
+
+      const sendData = async () => {
+        try {
+          await api.post('/anunciantes', {
+            email,
+            senha,
+            nome,
+            cpf,
+            telefone,
+            rua,
+            numero,
+            bairro,
+          })
+          
+        } catch (error) {
+          console.log(error.message)
+        }
+      }
+      sendData()
   
       alert("Usuário criado com sucesso!");
       navigate("/Login");
@@ -134,5 +154,3 @@ export function Singup(){
     </DivMainSingup>
   )
 }
-
-// target.innerHTML
