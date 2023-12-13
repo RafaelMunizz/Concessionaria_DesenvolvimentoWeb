@@ -16,7 +16,7 @@ export interface Anunciante {
   bairro: string
   funcao: number
 }
-interface Carros {
+export interface Carros {
   id: number
   marca: string
   modelo: string

@@ -69,7 +69,7 @@ export const DivPosts = styled.div`
 
   row-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  margin: 0px 30px;
+  margin: 20px 0px 50px 30px;
 `
 
 export const ButtonSearch = styled.button`
